@@ -1,4 +1,4 @@
-package net.javaguides.springboot.web.dto;
+package net.javaguides.springboot.dao;
 
 public class UserRegistrationDto {
 
