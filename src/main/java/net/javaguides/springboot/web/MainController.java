@@ -1,4 +1,4 @@
-package net.javaguides.springboot.controller;
+package net.javaguides.springboot.web;
 import org.springframework.ui.Model;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
