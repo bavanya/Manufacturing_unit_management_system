@@ -42,12 +42,12 @@
 				<div class="alert alert-info">You have been logged out.</div>
 			</div>
 			<div class="user-box">
-				<input type="text" id ="username" name = "username"
+				<input type="text" required pattern="\S+.*" maxlength="32" id ="username" name = "username"
 				placeholder="Enter Email ID" autofocus="autofocus">
 				<label for ="username">Username</label>
 			</div>
 			<div class="user-box">
-				<input type="password" id="password" name="password" class="form-control"
+				<input type="password" required pattern="\S+.*" id="password" name="password" class="form-control"
 				placeholder="Enter Password" >
 				<label for="password">Password</label>
 			</div>

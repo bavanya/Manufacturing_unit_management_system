@@ -2,7 +2,10 @@ package net.javaguides.springboot.service;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.stream.Collectors;
-
+import net.javaguides.springboot.model.Role;
+import net.javaguides.springboot.model.User;
+import net.javaguides.springboot.repository.UserRepository;
+import net.javaguides.springboot.web.dto.UserRegistrationDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -11,10 +14,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import net.javaguides.springboot.model.Role;
-import net.javaguides.springboot.model.User;
-import net.javaguides.springboot.repository.UserRepository;
-import net.javaguides.springboot.web.dto.UserRegistrationDto;
+
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -32,13 +32,17 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public User save(UserRegistrationDto registrationDto) {
-		User user=new User(registrationDto.getFirstName(),
-							registrationDto.getLastName(), 
-							registrationDto.getEmail(),
-							passwordEncoder.encode(registrationDto.getPassword()), 
-							Arrays.asList(new Role("ROLE_USER")));
-		
-		return userRepository.save(user);
+
+		User checkuser=userRepository.findByEmail(registrationDto.getEmail()); 
+		if(checkuser==null&&registrationDto.getFirstName()!=null&&registrationDto.getLastName()!=null&&registrationDto.getEmail()!=null&&registrationDto.getPassword()!=null){
+			User user=new User(registrationDto.getFirstName(),
+			registrationDto.getLastName(), 
+			registrationDto.getEmail(),
+			passwordEncoder.encode(registrationDto.getPassword()), 
+			Arrays.asList(new Role("Owner")));
+			return userRepository.save(user);
+		}
+		return new User();
 	}
 
 

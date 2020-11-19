@@ -41,7 +41,7 @@
 <br>
 <br>	
 	<div class="login-box">
-		<h2>Update Item</h2>
+		<h2>Update Material</h2>
 		<form action="#" th:action="@{/editMaterial/{id}(id=${material.id})}" method="post" th:object="${material}">
 			<div class="user-box">
 				<input type="text" th:value="${material.name}" id="name" th:field="*{name}"/>
