@@ -1,7 +1,6 @@
 package net.javaguides.springboot.model;
 
 import java.util.Collection;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,6 +13,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
+import javax.validation.constraints.NotNull;
+
 
 @Entity
 @Table(name="users", uniqueConstraints={@UniqueConstraint(columnNames={"email"})})
@@ -25,14 +26,18 @@ public class User
 	private Long id;
 	
 	@Column(name = "first_name")
+	@NotNull
 	private String firstName;
 	
 	@Column(name = "last_name")
+	@NotNull
 	private String lastName;
 	
 //	@Column(unique = true)
+	@NotNull
 	private String email;
 	
+	@NotNull
 	private String password;
 	
 	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)

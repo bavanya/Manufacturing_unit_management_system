@@ -35,22 +35,22 @@
 				<div class="alert alert-info">You have successfully registered</div>
 			</div>
 			<div class="user-box">
-				<input type="text" id ="firstName" th:field="*{firstName}"/>
+				<input type="text" id ="firstName" required pattern="\S+.*" maxlength="32" th:field="*{firstName}"/>
 				<label for ="firstName"> First Name </label>
 			</div>
 		
 			<div class="user-box">
-				<input type="text" id="lastName" th:field="*{lastName}"/>
+				<input type="text" id="lastName" required pattern="\S+.*" maxlength="32" th:field="*{lastName}"/>
 				<label for="lastName">Last Name </label>
 			</div>
 
 			<div class="user-box">
-				<input type="text" id="email" th:field="*{email}"/>
+				<input type="text" id="email" required pattern="\S+.*" maxlength="32"  th:field="*{email}"/>
 				<label for="email">Email </label>
 			</div>
 
 			<div class="user-box">
-				<input type="password" id="password" th:field="*{password}"/>
+				<input type="password" required pattern="\S+.*" id="password" th:field="*{password}"/>
 				<label for="password">Password</label>
 			</div>	
 			<div class="user-box">
