@@ -1,10 +1,6 @@
 package net.javaguides.springboot.model;
 
-import java.util.*;
 import javax.persistence.*;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "pieces")
@@ -14,7 +10,9 @@ public class Piece {
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Long id;
 
+    @Column(nullable=false)
     public String startdate;
+
     public String enddate;
 
     @ManyToOne

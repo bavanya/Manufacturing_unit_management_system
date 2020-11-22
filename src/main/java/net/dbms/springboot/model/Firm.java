@@ -1,6 +1,5 @@
 package net.javaguides.springboot.model;
 
-import java.util.Objects;
 import javax.persistence.*;
 
 @Entity
@@ -12,8 +11,14 @@ public class Firm {
     public Long id;
 
     public String address;
+
+    @Column(unique=true, nullable=false)
     public String name;
+
+    @Column(unique=true, nullable=false)
     public String registrationnumber;
+
+    @Column(unique=true, nullable=false)
     public String gstnumber;
     
     @OneToOne(fetch = FetchType.LAZY, optional = false)

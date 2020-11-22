@@ -1,8 +1,8 @@
 package net.javaguides.springboot.service;
-import net.javaguides.springboot.model.*;
-import net.javaguides.springboot.dao.*;
 import java.util.List;
 import java.util.Set;
+import net.javaguides.springboot.dao.*;
+import net.javaguides.springboot.model.*;
 import net.javaguides.springboot.model.Client;
 
 public interface IspringService {
@@ -26,8 +26,6 @@ public interface IspringService {
     List<Miscellaneoustransfer> findAllMiscellaneoustransfers();
 
     List<Purchaseorder> findAllPurchaseorders();
-
-    void addGreeting(GreetingDto greeting);
 
     void addItem(ItemDto item);
 

@@ -1,9 +1,9 @@
 package net.javaguides.springboot.service;
+import java.util.*;
+import net.javaguides.springboot.dao.*;
 import net.javaguides.springboot.model.*;
 import net.javaguides.springboot.model.Client;
-import net.javaguides.springboot.dao.*;
 import net.javaguides.springboot.repository.*;
-import java.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -39,9 +39,6 @@ public class springService implements IspringService {
 
     @Autowired
     private purchaseorderRepository prepository;
-
-    @Autowired
-    private greetingRepository grepository;
 
     @Autowired
     private bankRepository brepository;
@@ -155,12 +152,6 @@ public class springService implements IspringService {
     }
 
     @Override
-    public void addGreeting(GreetingDto greeting){
-        grepository.save(new Greeting(greeting.getContent()));
-        return;
-    };
-
-    @Override
     public void addItem(ItemDto item){
         
         if(iqrepository.itemByName(item.getName()).isEmpty() && iqrepository.itemByDescription(item.getDescription()).isEmpty()){
@@ -180,10 +171,12 @@ public class springService implements IspringService {
             m = irepository.save(m);
             return;
         }
+        
         Item m = irepository.findById(id).get();
             m.setName(item.name);
             m.setDescription(item.description);
             m = irepository.save(m);
+            
         return;
     }
 
@@ -240,10 +233,12 @@ public class springService implements IspringService {
             m = mrepository.save(m);
             return;
         }
+        
         Material m = mrepository.findById(id).get();
             m.setName(material.name);
             m.setDescription(material.description);
             m = mrepository.save(m);
+            
         return;
     }
 

@@ -1,7 +1,6 @@
 package net.javaguides.springboot.model;
-import java.util.Set;
 import java.util.HashSet;
-import java.util.Objects;
+import java.util.Set;
 import javax.persistence.*;
 
 
@@ -14,9 +13,14 @@ public class Bank{
     public Long id;
 
     public String ifsccode;
+
     public String name;
+
     public String branch;
+
     public String micrnumber;
+    
+    @Column(unique=true, nullable=false)
     public String accountnumber;
 
     @OneToOne(fetch = FetchType.LAZY,

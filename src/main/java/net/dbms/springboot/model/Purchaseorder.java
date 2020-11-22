@@ -1,9 +1,6 @@
 package net.javaguides.springboot.model;
 
-import java.util.Objects;
 import javax.persistence.*;
-import java.util.Set;
-import java.util.HashSet;
 
 
 @Entity
@@ -30,8 +27,10 @@ public class Purchaseorder{
     @JoinColumn(name = "materialid")
     public Material material;
 
+    @Column(nullable=false)
     public int quantity_in_units;
 
+    @Column(nullable=false)
     public int rupees_per_unit;
 
     public Long getId() {

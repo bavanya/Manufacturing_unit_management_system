@@ -1,6 +1,5 @@
 package net.javaguides.springboot.model;
 
-import java.util.Objects;
 import javax.persistence.*;
 
 
@@ -28,8 +27,10 @@ public class Clientorder{
     @JoinColumn(name = "itemid")
     public Item item;
 
+    @Column(nullable=false)
     public int quantity_in_units;
 
+    @Column(nullable=false)
     public int rupees_per_unit;
 
     public Long getId() {

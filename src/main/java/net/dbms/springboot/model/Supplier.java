@@ -1,9 +1,8 @@
 package net.javaguides.springboot.model;
 
-import java.util.Objects;
-import javax.persistence.*;
-import java.util.Set;
 import java.util.HashSet;
+import java.util.Set;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "suppliers")
@@ -13,6 +12,7 @@ public class Supplier{
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Long id;
 
+    @Column(nullable=false)
     public String contactnumber;
 
     @OneToOne(fetch = FetchType.LAZY, optional = false)

@@ -11,8 +11,12 @@ public class Item {
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Long id;
 
+    @Column(unique=true, nullable=false)
     public String name;
+
     public int quantity;
+
+    @Column(unique=true)
     public String description;
 
     @OneToMany(mappedBy = "item", cascade = CascadeType.ALL, fetch = FetchType.LAZY)

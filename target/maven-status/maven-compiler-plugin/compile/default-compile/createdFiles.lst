@@ -11,7 +11,6 @@ net/javaguides/springboot/config/SecurityConfiguration.class
 net/javaguides/springboot/web/MainController.class
 net/javaguides/springboot/model/Material.class
 net/javaguides/springboot/dao/ItemDto.class
-net/javaguides/springboot/model/Greeting.class
 net/javaguides/springboot/repository/pieceRepository.class
 net/javaguides/springboot/web/UserRegistrationController.class
 net/javaguides/springboot/model/Supplier.class
@@ -31,7 +30,6 @@ net/javaguides/springboot/model/Transaction.class
 net/javaguides/springboot/repository/clientQueryRepository.class
 net/javaguides/springboot/model/Item.class
 net/javaguides/springboot/repository/transactionRepository.class
-net/javaguides/springboot/repository/greetingRepository.class
 net/javaguides/springboot/repository/itemmaterialRepository.class
 net/javaguides/springboot/repository/miscellaneoustransferRepository.class
 net/javaguides/springboot/dao/MaterialDto.class
@@ -50,7 +48,6 @@ net/javaguides/springboot/model/Firm.class
 net/javaguides/springboot/dao/ClientDto.class
 net/javaguides/springboot/model/User.class
 net/javaguides/springboot/repository/pieceQueryRepository.class
-net/javaguides/springboot/dao/GreetingDto.class
 net/javaguides/springboot/repository/itemQueryRepository.class
 net/javaguides/springboot/model/Piece.class
 net/javaguides/springboot/repository/supplierQueryRepository.class

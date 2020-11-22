@@ -1,10 +1,7 @@
 package net.javaguides.springboot.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.*;
 import javax.persistence.*;
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
 
 @Entity
 @Table(name = "item_requirements")
@@ -14,6 +11,7 @@ public class ItemMaterial {
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Long id;
 
+    @Column(nullable=false)
     public int quantity;
 
     @ManyToOne

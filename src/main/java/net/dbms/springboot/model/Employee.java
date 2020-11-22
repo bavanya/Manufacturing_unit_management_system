@@ -10,9 +10,16 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Long id;
 
+    @Column(nullable=false)
     public String name;
+
+    @Column(nullable=false)
     public int monthly_salary;
+
+    @Column(nullable=false)
     public String designation;
+
+    @Column(nullable=false)
     public String status;
 
     @OneToOne(fetch = FetchType.LAZY, optional = false)

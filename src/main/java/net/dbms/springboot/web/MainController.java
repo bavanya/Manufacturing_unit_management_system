@@ -1,15 +1,15 @@
 package net.javaguides.springboot.web;
-import org.springframework.ui.Model;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.beans.factory.annotation.Autowired;
-import net.javaguides.springboot.service.IspringService;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import net.javaguides.springboot.model.*;
-import net.javaguides.springboot.dao.*;
 import java.util.*;
 import javax.validation.Valid;
+import net.javaguides.springboot.dao.*;
+import net.javaguides.springboot.model.*;
+import net.javaguides.springboot.service.IspringService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 @Controller
 public class MainController {
@@ -118,20 +118,7 @@ public class MainController {
 
         return "showPurchaseorders";
     }
-
-    @GetMapping("/greeting")
-    public String greetingForm(Model model) {
-      model.addAttribute("greeting", new Greeting());
-      return "greeting";
-    }
   
-    @PostMapping("/greeting")
-    public String greetingSubmit(@ModelAttribute GreetingDto greeting, Model model) {
-      cityService.addGreeting(greeting);
-      model.addAttribute("greeting", greeting);
-      return "result";
-    }
-
     @GetMapping("/addItemRegistration")
     public String getItemRegistrationPage(Model model) {
         model.addAttribute("item", new ItemDto());

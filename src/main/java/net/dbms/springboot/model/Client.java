@@ -1,8 +1,7 @@
 package net.javaguides.springboot.model;
 
-import java.util.Objects;
-import javax.persistence.*;
 import java.util.*;
+import javax.persistence.*;
 
 
 @Entity
@@ -13,6 +12,7 @@ public class Client{
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Long id;
 
+    @Column(nullable=false)
     public String contactnumber;
 
     @OneToOne(fetch = FetchType.LAZY, optional = false)

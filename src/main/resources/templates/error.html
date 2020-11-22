@@ -1,28 +1,86 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
-    <meta charset="UTF-8">
-    <title>Page Not Found</title>
+<meta charset="ISO-8859-1">
+<title>dbms</title>
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+
 </head>
 <body>
-<h1>The Email you entered has already been registered with another account!</h1>
-<p>
-    Please register with different Email address here:  <a href="/registration">Register Here!</a>.
-</p>
-<p>
-    Or Login with existing account here:  <a href="/login">Login Here!</a>.
-</p>
+	<!-- create navigation bar ( header) -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+                <a class="navbar-brand" href="#" th:href="@{/}">Manufacturing unit Management</a>    
+
+                <a class="navbar-brand" href="#" th:href="@{/showFirms?keyword=}">Firms</a>
+                <a class="navbar-brand" href="#" th:href="@{/showItems?keyword=}">Items</a>
+                <a class="navbar-brand" href="#" th:href="@{/showMaterials?keyword=}">Materials</a>
+                <a class="navbar-brand" href="#" th:href="@{/showEmployees?keyword=}">Employees</a>
+                <a class="navbar-brand" href="#" th:href="@{/showClients?keyword=}">Clients</a>
+                <a class="navbar-brand" href="#" th:href="@{/showSuppliers?keyword=}">Suppliers</a>
+			</div>
+
+			<div id="navbar" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Logout</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	
+	<div class="login-box">
+		<h2><a href="#" th:href="@{/showFirms?keyword=}">Show firms</a></h2>
+		<h2><a href="#" th:href="@{/showItems?keyword=}">Show items</a></h2>
+		<h2><a href="#" th:href="@{/showMaterials?keyword=}">Show materials</a></h2>
+		<h2><a href="#" th:href="@{/showEmployees?keyword=}">Show employees</a></h2>	
+		<h2><a href="#" th:href="@{/showClients?keyword=}">Show clients</a></h2>
+		<h2><a href="#" th:href="@{/showSuppliers?keyword=}">Show suppliers</a></h2>
+	</div>
 </body>
 </html>
 
 <style>
-    html {
-        height: 100%;
-      }
-      body {
-        margin:0;
-        padding:0;
-        font-family: sans-serif;
-        background: linear-gradient(#141e30, #243b55);
-      }
-      </style>
+	html {
+	  height: 100%;
+	}
+	body {
+	  margin:0;
+	  padding:0;
+	  font-family: sans-serif;
+	  background: linear-gradient(#141e30, #243b55);
+	}
+	
+	.login-box {
+	  position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  width: 600px;
+	  padding: 40px;
+	  transform: translate(-50%, -50%);
+	  background: rgba(0,0,0,.5);
+	  box-sizing: border-box;
+	  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+	  border-radius: 10px;
+	}
+	
+	.login-box h2 {
+	  margin: 0 0 30px;
+	  padding: 0;
+	  color: #fff;
+	  text-align: center;
+	}
+	
+	</style>
