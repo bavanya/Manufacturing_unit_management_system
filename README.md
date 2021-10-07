@@ -2,5 +2,5 @@ The explanation of the working of the management system is given the recording: 
 
 The ER Diagram, Project details and the presentation deck are present in the repository along with the source code.
 
-Postgresql was used for the database. 
+Postgresql database was used. 
 Spring boot and thymleaf were used for building the application.
