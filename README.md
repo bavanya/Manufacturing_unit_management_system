@@ -4,3 +4,7 @@ The ER Diagram, Project details and the presentation deck are present in the rep
 
 Postgresql database was used. 
 Spring boot and thymleaf were used for building the application.
+
+**Did you know**
+
+Did you know that storing comma seperated values in SQL column can be helpful sometimes? Columns can also defined to be variable length multidimensional arrays - [link](https://www.postgresql.org/docs/9.1/arrays.html)
