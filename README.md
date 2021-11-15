@@ -9,4 +9,4 @@ Spring boot and thymleaf were used for building the application.
 
 1. Did you know that storing comma seperated values in SQL columns can be helpful sometimes?
 
-2. Columns can also defined to be variable length multidimensional arrays - [link](https://www.postgresql.org/docs/9.1/arrays.html)
+2. Columns can also be variable length multidimensional arrays - [link](https://www.postgresql.org/docs/9.1/arrays.html)
